@@ -1,5 +1,10 @@
 <h1>Всі пости</h1>
 <% @post.each do |post| %>
-  <h3><%= post.title %></h3>
-  <p><%= post.body %></p>
+  <div class="card" >
+    <div class="card-body">
+      <h4 class="card-title" style="font-size: 200%;"><%= post.title %></h4>
+      <p class="card-text text-secondary font-italic"><%= post.body %></p>
+      <%= link_to "Читати дальше", post_path(post), :class => 'btn btn-link'%>
+    </div>
+  </div>
 <% end %>
