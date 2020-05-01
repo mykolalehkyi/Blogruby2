@@ -1,6 +1,6 @@
 <h1><%= @post.title %> </h1>
-<%= image_tag @post.image.url(:large), class: 'img-show' if @post.image? %>
 <p><%= @post.body%></p>
+<%= image_tag @post.image.url(:large), class: 'img-show' if @post.image? %>
 <hr>
 <%= link_to "Редагувати", edit_post_path(@post), :class => 'btn btn-warning'%>
 <%= link_to "Видалити", post_path(@post), method: :delete, data:{confirm: "Хочете видалити статтю?"}, :class => 'btn btn-danger'%>
