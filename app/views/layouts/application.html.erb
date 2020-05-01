@@ -18,6 +18,15 @@
       <span class="p-2 text-dark" ><%= link_to "Створити статтю", new_post_path %></span>
     </div>
     <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+        <% flash.each do |name, message|%>
+          <div class="alert alert-<%=name%>">
+           <%=message%>
+          </div>
+        <%end%>
+        </div>
+      </div>
       <%= yield %>
     </div>
   </body>
