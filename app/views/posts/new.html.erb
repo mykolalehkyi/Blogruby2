@@ -14,6 +14,10 @@
       <%= f.text_area(:body,{:class => 'form-control'}) %>
     </p>
     <p>
+      Добавити теги<br>
+      <%= f.text_field(:all_tags,{:class => 'form-control'}) %>
+    </p>
+    <p>
       Загрузити картинку<br>
       <%= f.file_field(:image,{:class => 'btn btn-primary btn-sm'}) %>
     </p>

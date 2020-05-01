@@ -1,0 +1,14 @@
+
+  <div class="card border-right-0 border-left-0" >
+    <div class="card-body p-1">
+      <h4 class="card-title mb-1" style="font-size: 150%;"><%= post.title %></h4>
+      <%= image_tag post.image.url(:thumb), class: 'img-thumbnail thumb float-left mr-1' if post.image?%>
+      <div>
+        <p class="card-text text-dark font-italic mb-0"><%= post.body %>
+          <small style="display:block;"><time class="text-secondary"><%=post.created_at.to_date.strftime("%d %B, %Y")%></time></small>
+          <%= raw post.tags.map(&:name).map{|t| link_to t, tag_path(t), class: 'badge badge-primary'}.join(' ') %>
+        </p>
+      </div>
+      <%= link_to "Читати дальше", post_path(post), :class => 'btn btn-link p-1' %>
+    </div>
+  </div>

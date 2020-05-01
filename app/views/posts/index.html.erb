@@ -1,12 +1,2 @@
 <h1>Всі пости</h1>
-<% @post.each do |post| %>
-  <div class="card border-right-0 border-left-0" >
-    <div class="card-body p-1">
-      <h4 class="card-title mb-1" style="font-size: 150%;"><%= post.title %></h4>
-      <p class="card-text text-dark font-italic mb-0"><%= post.body %>
-      <small style="display:block;"><time class="text-secondary"><%=post.created_at.to_date.strftime("%d %B, %Y")%></time></small>
-      </p>
-      <%= link_to "Читати дальше", post_path(post), :class => 'btn btn-link p-1'%>
-    </div>
-  </div>
-<% end %>
+<%= render @post %>
