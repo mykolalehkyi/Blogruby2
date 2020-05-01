@@ -4,7 +4,11 @@ class CommentsController < ApplicationController
     def create
         @post = Post.find(params[:post_id])
         @comment = @post.comments.create(comment_params)
-        redirect_to post_path(@post), success: "Коментар успішно добавлений"
+        if(@comment.save)
+            redirect_to post_path(@post), success: "Коментар успішно добавлений"
+        else
+            redirect_to post_path(@post), danger: "Псевдонім та коментар мають бути довжиною хоча б 1 символ.`"
+        end
     end
 
     private def comment_params
