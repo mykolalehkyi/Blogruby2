@@ -10,7 +10,7 @@
     <p><strong  <%#style="font-size: 200%;"%> ><%= comment.username %>: </strong>
     <span class="text-secondary font-italic"><%= comment.body %></span><p>
 <% end %>
-<h2>Додати коментар</h2>
+<h4><%= current_user %>Додати коментар</h4>
 <%= form_for ([@post, @post.comments.build]) do |f| %>
     <p>
       Користувач<br>
