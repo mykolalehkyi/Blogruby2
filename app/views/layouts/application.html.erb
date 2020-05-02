@@ -16,7 +16,7 @@
         <span class="p-2 font-weight-bold h4" ><%= link_to "About author", about_path, class: "text-info" %></span>
         <% if user_signed_in? %>
                 <span class="p-2 font-weight-bold h4" ><%= link_to "Create post", new_post_path, class: "text-info" %></span>
-          <span class="p-2 font-weight-bold h4" ><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "text-dark" %></span>
+          <span class="p-2 font-weight-bold h4" ><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "text-success" %></span>
         <%else %>
           <span class="p-2 font-weight-bold h4" ><%= link_to "Sign in", new_user_session_path, class: "text-success" %></span>
           <span class="p-2 font-weight-bold h4" ><%= link_to "Sign up", new_user_registration_path, class: "text-success" %></span>

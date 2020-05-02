@@ -7,12 +7,12 @@
   <%= link_to "Видалити", post_path(@post), method: :delete, data:{confirm: "Хочете видалити статтю?"}, :class => 'btn btn-danger btn-sm'%>
   <hr>
 <%end%>
-<h1>Всі коментарі</h1>
+<h1 class="text-primary">Всі коментарі</h1>
 <% @post.comments.each do |comment| %>
     <p><strong  <%#style="font-size: 200%;"%> ><%= comment.username %>: </strong>
     <span class="text-secondary font-italic"><%= comment.body %></span><p>
 <% end %>
-<h4>Додати коментар</h4>
+<h4 class="text-primary">Додати коментар</h4>
 <%= form_for ([@post, @post.comments.build]) do |f| %>
     <p>
       Ваш псевдонім<br>
